@@ -43,10 +43,10 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CustomContainer(
-              borderColor: Colors.blue,
-              labelText: "Texto de teste",
-              listColorGradient: [],
+              borderColor: Colors.red,
+              labelText: "Apresentação do designer",
             ),
+            customButton(),
           ],
         ),
       ),

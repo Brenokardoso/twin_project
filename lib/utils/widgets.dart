@@ -6,30 +6,50 @@ class CustomContainer extends StatelessWidget {
     super.key,
     required this.borderColor,
     required this.labelText,
-    required this.listColorGradient,
+    this.listColorGradient,
   });
 
   final Color borderColor;
   final String labelText;
-  final List<Colors> listColorGradient;
+  final List<Colors>? listColorGradient;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      padding: EdgeInsets.zero,
-      margin: EdgeInsets.all(1),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(colors: []),
-        border: Border.all(
-          color: borderColor,
-          style: BorderStyle.solid,
-          strokeAlign: 1,
+    return Flexible(
+      child: Container(
+        height: 200,
+        alignment: Alignment.center,
+        padding: EdgeInsets.zero,
+        margin: EdgeInsets.symmetric(horizontal: 20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          border: Border.all(
+            width: 2.5,
+            color: borderColor,
+            style: BorderStyle.solid,
+          ),
+          // gradient: LinearGradient(colors: []),
+        ),
+        child: Text(
+          labelText,
+          style: containerTextStyle,
+          textAlign: TextAlign.center,
         ),
       ),
-      child: Text(labelText, style: containerTextStyle),
     );
   }
 }
 
-TextEditingController textController = TextEditingController(text: "TEXT");
+Widget customButton() => FilledButton(
+  onPressed: (() {}),
+  onHover: (isHoverd) {},
+  style: ButtonStyle(
+    backgroundColor: WidgetStateProperty.all<Color>(Colors.transparent),
+    padding: WidgetStateProperty.all<EdgeInsets>(EdgeInsets.all(20)),
+    side: WidgetStateProperty.all(
+      BorderSide(color: Colors.grey[800]!, style: BorderStyle.solid),
+    ),
+    alignment: Alignment.center,
+  ),
+  child: Text('Voltar', style: buttonTextStyle),
+);
