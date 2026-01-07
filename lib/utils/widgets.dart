@@ -20,7 +20,7 @@ class CustomContainer extends StatelessWidget {
         height: 200,
         alignment: Alignment.center,
         padding: EdgeInsets.zero,
-        margin: EdgeInsets.symmetric(horizontal: 20),
+        // margin: EdgeInsets.symmetric(horizontal: 20), // Se colocar um padding ou fazer um alinhamento geral refazer esse trem
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           border: Border.all(
@@ -40,7 +40,7 @@ class CustomContainer extends StatelessWidget {
   }
 }
 
-Widget customButton() => FilledButton(
+Widget customButton({required String labelText}) => FilledButton(
   onPressed: (() {}),
   onHover: (isHoverd) {},
   style: ButtonStyle(
@@ -51,5 +51,5 @@ Widget customButton() => FilledButton(
     ),
     alignment: Alignment.center,
   ),
-  child: Text('Voltar', style: buttonTextStyle),
+  child: Text(labelText, style: buttonTextStyle),
 );
