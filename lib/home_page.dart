@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   MenuController menuController = MenuController();
+  final Map<int, bool> dictContainerColor = {};
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,7 @@ class _HomePageState extends State<HomePage> {
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     String labelChild = index >= 1 ? "Crianças" : "Criança";
+                    dictContainerColor.putIfAbsent(index, () => false);
                     List<Color> colorBorderContainer = [
                       Colors.red,
                       Colors.green,
@@ -42,6 +44,8 @@ class _HomePageState extends State<HomePage> {
                     return CustomContainer(
                       borderColor: colorBorderContainer[index],
                       labelText: "${index + 1} $labelChild",
+                      indexColorRadient: dictContainerColor,
+                      
                     );
                   },
                   separatorBuilder: (sepContext, sepIndex) {
