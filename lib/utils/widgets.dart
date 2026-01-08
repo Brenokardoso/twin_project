@@ -9,6 +9,7 @@ class CustomContainer extends StatelessWidget {
     this.listColorGradient,
     this.colorContainer,
     this.indexColorRadient,
+    this.onpressed,
   });
 
   final Color borderColor;
@@ -21,7 +22,7 @@ class CustomContainer extends StatelessWidget {
     Color.fromARGB(255, 168, 216, 187),
   ];
   final Map<int, bool>? indexColorRadient;
-  VoidCallback? onpressed;
+  final VoidCallback? onpressed;
 
   @override
   Widget build(BuildContext context) {
