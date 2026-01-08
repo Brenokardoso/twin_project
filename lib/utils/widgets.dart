@@ -2,7 +2,7 @@ import 'package:app_twins/theme/theme_data_base.dart';
 import 'package:flutter/material.dart';
 
 class CustomContainer extends StatelessWidget {
-  const CustomContainer({
+  CustomContainer({
     super.key,
     required this.borderColor,
     required this.labelText,
@@ -12,6 +12,11 @@ class CustomContainer extends StatelessWidget {
   final Color borderColor;
   final String labelText;
   final List<Colors>? listColorGradient;
+  final List<Color>? defaultListGradient = [
+    Color.fromARGB(255, 252, 161, 170),
+    Color.fromARGB(255, 122, 204, 227),
+    Color.fromARGB(255, 168, 216, 187),
+  ];
 
   @override
   Widget build(BuildContext context) {
